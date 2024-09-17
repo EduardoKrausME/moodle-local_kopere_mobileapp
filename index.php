@@ -22,7 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require ("../../config.php");
+require("../../config.php");
 
 header("Cache-Control: no-cache, must-revalidate");
 header("Pragma: no-cache");
@@ -49,6 +49,7 @@ try {
             $mobile = optional_param('kopere_mobile_mobile', false, PARAM_INT);
             if ($mobile) {
                 $SESSION->kopere_mobile_mobile = 1;
+                $SESSION->forcepagelayout = 'embedded';
             }
             $preservepage = optional_param('kopere_mobile_preserve_page', false, PARAM_TEXT);
             if ($preservepage) {
